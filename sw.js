@@ -16,6 +16,7 @@ this.addEventListener('install', function(event) {
   );
 });
 
+/*
 this.addEventListener('fetch', function(event) {
   var response;
   event.respondWith(caches.match(event.request).catch(function() {
@@ -29,4 +30,11 @@ this.addEventListener('fetch', function(event) {
   }).catch(function() {
     return caches.match('/sw-test/gallery/myLittleVader.jpg');
   }));
+});
+*/
+
+this.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request)
+  );
 });
